@@ -1,0 +1,21 @@
+doctype html
+html
+  
+    .top-margin 
+      h1 latest blogs  
+    include partials/admin-header.pug        
+    #blogs-wrapper.blogs-wrapper.static
+     each blog in blogs
+      .blog-wrapper.in-blog(data-w-id='c997be20-0c54-bab7-0ed4-2527a13a5ec7')
+        .blog-featured-image
+          img.blog-image(src=blog.featuredimage)
+        .blog-body
+          h4.blog-title-name #{blog.title}
+          p.blog-description
+            #{blog.summary}
+          .blog-separator
+          .blog-top-space._30
+          .read-blog
+            a.read-more.w-button(href='/blogs/edit/'+blog._id) Edit
+            a.read-more.w-button(href='/blogs/delete/'+blog._id) delete
+    include partials/paginate

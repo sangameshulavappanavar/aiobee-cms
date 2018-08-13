@@ -1,0 +1,122 @@
+doctype html
+html
+  include partials/admin-header.pug
+  p #{blog}
+  .container-3.w-container
+    h1 Add Blog
+    .form-block
+      form.form(action="/blogs/save", method="post")
+        if blog
+          input(type="hidden" name="_id" value=blog._id)
+        label.field-label(for='title') Title
+        if blog
+          input#name.blog-field-value.w-input(type='text', name='title', placeholder='Title', required='' value=blog.title)
+        else
+          input#name.blog-field-value.w-input(type='text', name='title', placeholder='Title', required='' )
+        label.field-label(for='summary') Summary
+        if blog
+          input#name.blog-field-value.w-input(type='text', name='summary', placeholder='summary', required='' value=blog.summary)
+        else
+          input#name.blog-field-value.w-input(type='text', name='summary', placeholder='summary', required='')
+        label.field-label(for='featuredimage') featuredimage
+        if blog
+          input#name.blog-field-value.w-input(type='text', name='featuredimage', placeholder='featuredimage', required='' value=blog.featuredimage)
+        else
+          input#name.blog-field-value.w-input(type='text', name='featuredimage', placeholder='featuredimage', required='')
+        label.field-label(for='image01') image01
+        if blog
+          input#name.blog-field-value.w-input(type='text', name='image01', placeholder='image01', required='' value=blog.image01)
+        else
+          input#name.blog-field-value.w-input(type='text', name='image01', placeholder='image01', required='') 
+        label.field-label(for='image02') image02
+        if blog
+          input#name.blog-field-value.w-input(type='text', name='image02', placeholder='image02', required='' value=blog.image02)
+        else
+          input#name.blog-field-value.w-input(type='text', name='image02', placeholder='image02', required='')     
+        label.field-label(for='description') Description
+        if blog
+          textarea.blog-multiple-value.w-input(type='text', name='description', placeholder='description', required='' value=blog.description)
+        else
+          textarea.blog-multiple-value.w-input(type='text', name='description', placeholder='description', required='')
+        label.field-label(for='authour') authour
+        if blog
+          input#name.blog-field-value.w-input(type='text', name='authour', placeholder='authour', required='' value=blog.authour)
+        else
+          input#name.blog-field-value.w-input(type='text', name='authour', placeholder='authour', required='')
+        label.field-label(for='author') metatitle
+          if blog
+            input#name.blog-field-value.w-input(type='text', name='metatitle', placeholder='metatitle', required='' value=blog.metatitle)
+          else
+            input#name.blog-field-value.w-input(type='text', name='metatitle', placeholder='metatitle', required='')
+        label.field-label(for='author') metadescription
+          if blog
+            textarea.blog-multiple-value.w-input(type='text', name='metadescription', placeholder='metadescription', required='' value=blog.metadescription)
+          else
+            textarea.blog-multiple-value.w-input(type='text', name='metadescription', placeholder='metadescription', required='')
+        label.field-label(for='author') ogtitle
+          if blog
+            input#name.blog-field-value.w-input(type='text', name='ogtitle', placeholder='ogtitle', required='' value=blog.ogtitle)
+          else
+            input#name.blog-field-value.w-input(type='text', name='ogtitle', placeholder='ogtitle', required='')
+        label.field-label(for='author') ogimage
+          if blog
+            input#name.blog-field-value.w-input(type='text', name='ogimage', placeholder='ogimage', required='' value=blog.ogimage)
+          else
+            input#name.blog-field-value.w-input(type='text', name='ogimage', placeholder='ogimage', required='')
+        label.field-label(for='author') twitterurl
+          if blog
+            input#name.blog-field-value.w-input(type='text', name='twitterurl', placeholder='twitterurl', required='' value=blog.twitterurl)
+          else
+            input#name.blog-field-value.w-input(type='text', name='twitterurl', placeholder='twitterurl', required='')
+        label.field-label(for='author') twitterdescription
+          if blog
+            textarea.blog-multiple-value.w-input(type='text', name='twitterdescription', placeholder='twitterdescription', required='' value=blog.twitterdescription)
+          else
+            textarea.blog-multiple-value.w-input(type='text', name='twitterdescription', placeholder='twitterdescription', required='')
+        label.field-label(for='author') metakeywords
+          if blog
+            input#name.blog-field-value.w-input(type='text', name='metakeywords', placeholder='metakeywords', required='' value=blog.metakeywords)
+          else
+            input#name.blog-field-value.w-input(type='text', name='metakeywords', placeholder='metakeywords', required='')
+        label.field-label(for='author') ogsite
+          if blog
+            input#name.blog-field-value.w-input(type='text', name='ogsite', placeholder='ogsite', required='' value=blog.ogsite)
+          else
+            input#name.blog-field-value.w-input(type='text', name='ogsite', placeholder='ogsite', required='')
+        label.field-label(for='author') ogdescription
+          if blog
+            textarea.blog-multiple-value.w-input(type='text', name='ogdescription', placeholder='ogdescription', required='' value=blog.ogdescription)
+          else
+            textarea.blog-multiple-value.w-input(type='text', name='ogdescription', placeholder='ogdescription', required='')  
+        label.field-label(for='author') twittercard
+          if blog
+            input#name.blog-field-value.w-input(type='text', name='twittercard', placeholder='twittercard', required='' value=blog.twittercard)
+          else
+            input#name.blog-field-value.w-input(type='text', name='twittercard', placeholder='twittercard', required='')
+        label.field-label(for='author') twittertitle
+          if blog
+            input#name.blog-field-value.w-input(type='text', name='twittertitle', placeholder='twittertitle', required='' value=blog.twittertitle)
+          else
+            input#name.blog-field-value.w-input(type='text', name='twittertitle', placeholder='twittertitle', required='')
+        label.field-label(for='author') twitterimage
+          if blog
+            input#name.blog-field-value.w-input(type='text', name='twitterimage', placeholder='twitterimage', required='' value=blog.twitterimage)
+          else
+            input#name.blog-field-value.w-input(type='text', name='twitterimage', placeholder='twitterimage', required='') 
+        label.field-label(for='author') editor1
+          if blog
+            textarea(name='editor1', placeholder='author', required='' value=blog.editor1)
+          else
+            textarea(name='editor1')
+          script.
+            CKEDITOR.replace( 'editor1' ); 
+                                                       
+        button(type="submit") Save
+
+        
+          .w-form-done
+            div Thank you! Your submission has been received!
+          .w-form-fail
+            div Oops! Something went wrong while submitting the form.
+
+        

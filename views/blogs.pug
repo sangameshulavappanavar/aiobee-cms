@@ -1,0 +1,24 @@
+extend layout
+
+block content
+  .service-banner(data-ix='show-navbar')
+  img.image-25(src='/images/Sky2.gif')
+  h1.heading-44
+    strong Blogs
+  .latestblogs
+    h2.heading-custom Latest Blogs
+    #blogs-wrapper.blogs-wrapper.static
+      each blog in blogs
+        .blog-wrapper.in-blog(data-w-id='c997be20-0c54-bab7-0ed4-2527a13a5ec7')
+          .blog-featured-image
+              img.blog-image(src=blog.featuredimage)
+          .blog-body
+              h4.blog-title-name #{blog.title}
+              p.blog-description #{blog.summary}
+                
+              .blog-separator
+              .blog-top-space._30
+              .read-blog
+                a.read-more.w-button(href='blogs/'+blog.title+'/'+blog._id) Read More 
+              br
+    include partials/paginate

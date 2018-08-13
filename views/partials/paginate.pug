@@ -1,0 +1,40 @@
+if (pages > 0)
+  ul(class="pagination")
+    if (current == 1)
+      li(class="page-item disabled")
+        if searchStr
+          a(class="page-link" href="?page=1&perPage=6&searchStr="+searchStr) First
+        else
+          a(class="page-link" href="?page=1&perPage=6") First
+    else
+      li
+        if searchStr
+          a(class="page-link" href="?page=1&perPage=6&searchStr="+searchStr) First
+        else
+          a(class="page-link" href="?page=1&perPage=6") First
+    - var i = (Number(current) > 5 ? Number(current) - 4 : 1)
+    if (i !== 1)
+      li
+        a(class="page-link" href="") ...
+    - for (; i <= (Number(current) + 4) && i <= pages; i++)
+      if (i == current)
+        li(class="page-item active")
+          a(class="page-link") #{i}
+      else
+        li
+          if searchStr
+            a(class="page-link" href="?page="+i+"&perPage=6&searchStr="+searchStr) #{i}
+          else
+            a(class="page-link" href="?page="+i+"&perPage=6") #{i}
+      if (i == Number(current) + 4 && i < pages)
+        li(class="page-item disables")
+          a(class="page-link" href="") ...
+    if (current == pages)
+      li(class="page-item disabled")
+        a(class="page-link" href="") Last
+    else
+      li
+        if searchStr
+          a(class="page-link" href="?page="+pages+"&perPage=6&searchStr="+searchStr) Last        
+        else
+          a(class="page-link" href="?page="+pages+"&perPage=6") Last                  

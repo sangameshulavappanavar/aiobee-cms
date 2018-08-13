@@ -1,0 +1,112 @@
+doctype html
+html
+  include partials/admin-header.pug
+  p #{service}
+  .container-3.w-container
+    h1 Add Service
+    .form-block
+      form.form(action="/services/save", method="post")
+        if service
+          input(type="hidden" name="_id" value=service._id)
+        label.field-label(for='title') Title
+        if service
+          input#name.blog-field-value.w-input(type='text', name='title', placeholder='Title', required='' value=service.title)
+        else
+          input#name.blog-field-value.w-input(type='text', name='title', placeholder='Title', required='' )
+        label.field-label(for='summary') Summary
+        if service
+          input#name.blog-field-value.w-input(type='text', name='summary', placeholder='summary', required='' value=service.summary)
+        else
+          input#name.blog-field-value.w-input(type='text', name='summary', placeholder='summary', required='')
+        label.field-label(for='description') Description
+        if service
+          textarea.blog-multiple-value.w-input(type='text', name='description', placeholder='description',  value=service.description)
+        else
+          textarea.blog-multiple-value.w-input(type='text', name='description', placeholder='description', )
+        label.field-label(for='featureimage') featureImage
+        if service
+          input#name.blog-field-value.w-input(type='text', name='featureimage', placeholder='featureimage', required='' value=service.featureimage)
+        else
+          input#name.blog-field-value.w-input(type='text', name='featureimage', placeholder='featureimage', required='')
+        label.field-label(for='author') metatitle
+          if service
+            input#name.blog-field-value.w-input(type='text', name='metatitle', placeholder='metatitle', required='' value=service.metatitle)
+          else
+            input#name.blog-field-value.w-input(type='text', name='metatitle', placeholder='metatitle', required='')
+        label.field-label(for='author') metadescription
+          if service
+            textarea.blog-multiple-value.w-input(type='text', name='metadescription', placeholder='metadescription', required='' value=service.metadescription)
+          else
+            textarea.blog-multiple-value.w-input(type='text', name='metadescription', placeholder='metadescription', required='')
+        label.field-label(for='author') ogtitle
+          if service
+            input#name.blog-field-value.w-input(type='text', name='ogtitle', placeholder='ogtitle', required='' value=service.ogtitle)
+          else
+            input#name.blog-field-value.w-input(type='text', name='ogtitle', placeholder='ogtitle', required='')
+        label.field-label(for='author') ogimage
+          if service
+            input#name.blog-field-value.w-input(type='text', name='ogimage', placeholder='ogimage', required='' value=service.ogimage)
+          else
+            input#name.blog-field-value.w-input(type='text', name='ogimage', placeholder='ogimage', required='')
+        label.field-label(for='serviceinfo') serviceinfo
+          if service
+            input#name.blog-field-value.w-input(type='text', name='serviceinfo', placeholder='serviceinfo', required='' value=service.serviceinfo)
+          else
+            input#name.blog-field-value.w-input(type='text', name='serviceinfo', placeholder='serviceinfo', required='' )    
+        label.field-label(for='author') twitterurl
+          if service
+            input#name.blog-field-value.w-input(type='text', name='twitterurl', placeholder='twitterurl', required='' value=service.twitterurl)
+          else
+            input#name.blog-field-value.w-input(type='text', name='twitterurl', placeholder='twitterurl', required='' value="https://aiobee.com")
+        label.field-label(for='author') twitterdescription
+          if service
+            textarea.blog-multiple-value.w-input(type='text', name='twitterdescription', placeholder='twitterdescription', required='' value=service.twitterdescription)
+          else
+            textarea.blog-multiple-value.w-input(type='text', name='twitterdescription', placeholder='twitterdescription', required='')
+        label.field-label(for='author') metakeywords
+          if service
+            input#name.blog-field-value.w-input(type='text', name='metakeywords', placeholder='metakeywords', required='' value=service.metakeywords)
+          else
+            input#name.blog-field-value.w-input(type='text', name='metakeywords', placeholder='metakeywords', required='')
+        label.field-label(for='author') ogsite
+          if service
+            input#name.blog-field-value.w-input(type='text', name='ogsite', placeholder='ogsite', required='' value=service.ogsite)
+          else
+            input#name.blog-field-value.w-input(type='text', name='ogsite', placeholder='ogsite', required='' value="https://aiobee.com")
+        label.field-label(for='author') ogdescription
+          if service
+            textarea.blog-multiple-value.w-input(type='text', name='ogdescription', placeholder='ogdescription', required='' value=service.ogdescription)
+          else
+            textarea.blog-multiple-value.w-input(type='text', name='ogdescription', placeholder='ogdescription', required='' value="https://aiobee.com")  
+        label.field-label(for='author') twittercard
+          if service
+            input#name.blog-field-value.w-input(type='text', name='twittercard', placeholder='twittercard', required='' value=service.twittercard)
+          else
+            input#name.blog-field-value.w-input(type='text', name='twittercard', placeholder='twittercard', required='')
+        label.field-label(for='author') twittertitle
+          if service
+            input#name.blog-field-value.w-input(type='text', name='twittertitle', placeholder='twittertitle', required='' value=service.twittertitle)
+          else
+            input#name.blog-field-value.w-input(type='text', name='twittertitle', placeholder='twittertitle', required='')
+        label.field-label(for='author') twitterimage
+          if service
+            input#name.blog-field-value.w-input(type='text', name='twitterimage', placeholder='twitterimage', required='' value=service.twitterimage)
+          else
+            input#name.blog-field-value.w-input(type='text', name='twitterimage', placeholder='twitterimage', required='') 
+        label.field-label(for='author') editor1
+          if service
+            textarea(name='editor1', placeholder='author', required='' value=service.editor1)
+          else
+            textarea(name='editor1')
+          script.
+            CKEDITOR.replace( 'editor1' ); 
+                                                       
+        button(type="submit") Save
+
+        
+          .w-form-done
+            div Thank you! Your submission has been received!
+          .w-form-fail
+            div Oops! Something went wrong while submitting the form.
+
+        

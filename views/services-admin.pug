@@ -1,0 +1,24 @@
+doctype html
+html
+  include partials/admin-header.pug
+            br
+            br
+            br
+            br
+  .wrapper
+     each service in services
+      .server-side-iblock
+        .server-side-info
+          img(src='/images/serv-1.png', width='64')
+          h3.heading-33 #{service.title}
+          p.paragraph-18
+            #{service.summary}
+          a.link-block-8.w-inline-block(href='/services/edit/'+service._id)
+            .text-block-13 edit 
+          a.link-block-8.w-inline-block(href='/services/delete/'+service._id)
+            .text-block-13 delete 
+            img.image-7(src='https://uploads-ssl.webflow.com/5b1a5374a0b2a2d98f305dd6/5b1a8b96ebcf427c174e87c8_5a8ca6628383c60001e65e54_Mini-arrow.png', width='7')
+        .server-side-contact
+          .server-side-image
+            img.image-23(src=service.featureimage)
+            p.server-side-text.blue #{service.serviceinfo}
