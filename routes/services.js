@@ -4,36 +4,38 @@ const Service = require('./../models/Service')
 const Page = require('./../models/pages')
 
 /* GET home page. */
-// router.get('/', function (req, res, next) {
-//   var perPage = 2
-//   var page = req.param('page') || 1
-//   console.log('PAGE: ',req.param('page'));
-//   Service
-//       .find({})
-//       .skip((perPage * page) - perPage)
-//       .limit(perPage)
-//       .exec(function(err, services) {
-//         Service.count().exec(function(err, count) {
-//               if (err) return next(err)
-//               res.render('services', {
-//                   services,
-//                   current: page,
-//                   pages: Math.ceil(count / perPage)
-//               })
-//           });
-//       });
-// });
-
 router.get('/', function (req, res, next) {
-  Service.find({}, function(err, services) {
-    Page.findOne({"pagename" : "service"}, function (err, page) {
-      console.log(page);
-    if (err) console.log('Error in find services');
-    res.render('services',{services:services, page:page});
-  });
+  Page.findOne({"pagename" : "service"}, function (err, page) {
+  var perPage = 6
+  var page = req.param('page') || 1
+  console.log('PAGE: ',req.param('page'));
+  Service
+      .find({})
+      .skip((perPage * page) - perPage)
+      .limit(perPage)
+      .exec(function(err, services) {
+        Service.count().exec(function(err, count) {
+              if (err) return next(err)
+              res.render('services', {
+                  services,
+                  current: page,
+                  pages: Math.ceil(count / perPage), page:page
+              })
+          });
+      });
+});
+});
+
+// router.get('/', function (req, res, next) {
+//   Service.find({}, function(err, services) {
+//     Page.findOne({"pagename" : "service"}, function (err, page) {
+//       console.log(page);
+//     if (err) console.log('Error in find services');
+//     res.render('services',{services:services, page:page});
+//   });
   
-});
-});
+// });
+// });
 
 router.get('/new',ensureAuthenticated, function (req, res, next) {
   res.render('new-service');
