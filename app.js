@@ -11,8 +11,10 @@ var LocalStrategy = require('passport-local').Strategy;
 var mongo = require('mongodb');
 var mongoose = require('mongoose');
 
-// mongoose.connect('mongodb://sangamesh:vcvula20966@ds213832.mlab.com:13832/aiobee');
-mongoose.connect(process.env.PROD_MONGODB, { useNewUrlParser: true });
+// mongoose.connect('mongodb://sangamesh:vcvula20966@ds213832.mlab.com:13832/aiobee', { useNewUrlParser: true });
+mongoose.connect(process.env.PROD_MONGODB | 'mongodb://sangamesh:vcvula20966@ds213832.mlab.com:13832/aiobee', { useNewUrlParser: true });
+
+
 
 var db = mongoose.connection;
 
