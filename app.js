@@ -12,7 +12,7 @@ var mongo = require('mongodb');
 var mongoose = require('mongoose');
 
 // mongoose.connect('mongodb://sangamesh:vcvula20966@ds213832.mlab.com:13832/aiobee', { useNewUrlParser: true });
-mongoose.connect(process.env.PROD_MONGODB | 'mongodb://sangamesh:vcvula20966@ds213832.mlab.com:13832/aiobee', { useNewUrlParser: true });
+mongoose.connect('mongodb://sangamesh:vcvula20966@ds213832.mlab.com:13832/aiobee');
 
 
 
