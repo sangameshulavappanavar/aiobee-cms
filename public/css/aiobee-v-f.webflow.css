@@ -916,6 +916,7 @@
   background-image: url('../images/example-bg.png');
   background-position: 50% 50%;
   background-size: cover;
+  height: 200px;
 }
 
 .read-blog {
@@ -996,6 +997,9 @@
   color: #9ba4af;
   line-height: 24px;
   text-align: left;
+  max-height: 150px;
+  min-height: 150px;
+  overflow: hidden
 }
 
 .feature-small-line {
@@ -1041,6 +1045,7 @@
   height: auto;
   max-width: 100%;
   margin: -20px 0px 5px;
+  height: 200px;
 }
 
 .blog-separator {
